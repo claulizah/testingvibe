@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.title">TestingVibe — QA con rigor bancario para apps creadas con IA</title>
+<meta name="description" content="Revisión de QA para apps creadas con Lovable, Bolt o Cursor + Supabase: qué funciona, qué falla y cómo corregirlo. Con rigor de banca y pensado para Latinoamérica." data-i18n-attr="content:meta.desc">
+<link rel="canonical" href="https://testingvibe.com/">
+<meta name="theme-color" content="#fff7ee">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TestingVibe">
+<meta property="og:url" content="https://testingvibe.com/">
+<meta property="og:title" content="TestingVibe — QA con rigor bancario para apps creadas con IA" data-i18n-attr="content:meta.title">
+<meta property="og:description" content="Lanza con confianza. Un reporte claro: qué funciona, qué falla y cómo corregirlo." data-i18n-attr="content:meta.ogdesc">
+<meta property="og:image" content="https://testingvibe.com/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://testingvibe.com/img/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "TestingVibe",
+  "url": "https://testingvibe.com/",
+  "description": "Servicio de QA para apps creadas con IA (Lovable, Bolt, Cursor + Supabase): flujos críticos, seguridad básica, accesibilidad, rendimiento y reporte con hallazgos priorizados.",
+  "image": "https://testingvibe.com/img/og-image.png",
+  "areaServed": "Latin America",
+  "availableLanguage": ["es", "en"],
+  "priceRange": "$19-$449",
+  "founder": {
+    "@type": "Person",
+    "name": "Claudia Acosta",
+    "jobTitle": "QA Engineer",
+    "url": "https://dragonflaiqa.com"
+  },
+  "sameAs": ["https://dragonflaiqa.com"]
+}
+</script>
+
+<link rel="stylesheet" href="/css/styles.css">
+<script src="/js/config.js"></script>
+<script src="/js/links.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="TestingVibe">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="7" fill="#ffb84d"/><g stroke="#e8512f" stroke-width="2.4" stroke-linecap="round"><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M25.2 6.8l-2.8 2.8M9.6 22.4l-2.8 2.8"/></g></svg>
+      <span>testing<b>vibe</b></span>
+    </a>
+    <nav class="nav" aria-label="Principal" data-i18n-attr="aria-label:nav.label">
+      <a href="#problema" data-i18n="nav.problem">El problema</a>
+      <a href="#como" data-i18n="nav.how">Cómo funciona</a>
+      <a href="#paquetes" data-i18n="nav.pricing">Paquetes</a>
+      <a href="#recibes" data-i18n="nav.receive">Qué recibes</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="/blog/" class="flag flag-blog" data-i18n="nav.blog">Blog</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Para apps creadas con Lovable, Bolt, Cursor + Supabase</p>
+      <h1><span data-i18n="hero.h1a">QA con rigor bancario para apps creadas con IA.</span> <em data-i18n="hero.h1b">Lanza con confianza.</em></h1>
+      <p class="lead" data-i18n="hero.lead">Reviso tu app antes de que la usen tus clientes y te entrego un reporte claro: qué funciona, qué falla y cómo corregirlo, con rigor de banca y pensado para Latinoamérica.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#paquetes" data-i18n="hero.cta1">Solicita tu revisión</a>
+        <a class="btn btn-ghost" href="https://calendly.com/clauliz-acosta/30min" data-calendly rel="noopener" data-i18n="hero.cta2">Agenda 30 minutos</a>
+      </div>
+    </div>
+    <ul class="hero-points" aria-label="Qué incluye" data-i18n-attr="aria-label:hero.pointsLabel">
+      <li data-i18n="hero.p1">Registro, login y pago probados de punta a punta</li>
+      <li data-i18n="hero.p2">Llaves expuestas y reglas RLS de Supabase revisadas</li>
+      <li data-i18n="hero.p3">Hallazgos por severidad, con prompts para corregirlos</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2. EL PROBLEMA -->
+<section id="problema" class="section alt">
+  <div class="wrap">
+    <h2 data-i18n="problem.h2">Construir rápido con IA no significa construir seguro</h2>
+    <p class="sub" data-i18n="problem.sub">Esto reportan estudios y medios recientes. No son cifras mías; cada una enlaza a su fuente.</p>
+    <div class="stats">
+      <figure class="stat">
+        <p class="num">98%</p>
+        <figcaption>
+          <span data-i18n="problem.s1">de 1,072 apps creadas con IA tenía al menos una falla de seguridad, según un escaneo de Symbiotic Security (jun 2026).</span>
+          <a href="https://www.symbioticsec.ai/blog/we-scanned-1-072-vibe-coded-apps-98-had-security-flaws" target="_blank" rel="noopener" data-i18n="problem.src">Ver fuente</a>
+        </figcaption>
+      </figure>
+      <figure class="stat">
+        <p class="num">57%</p>
+        <figcaption>
+          <span data-i18n="problem.s2">de las apps con Supabase alcanzables en un escaneo de Reeve (2,096 de 3,680) permitían leer tablas sin autenticación, según el reporte mensual de Vibe-Eval (ago 2026).</span>
+          <a href="https://vibe-eval.com/updates/vibe-coding-security-monthly-aug-2026/" target="_blank" rel="noopener" data-i18n="problem.src">Ver fuente</a>
+        </figcaption>
+      </figure>
+      <figure class="stat">
+        <p class="num">~16,000</p>
+        <figcaption>
+          <span data-i18n="problem.s3">bases de datos alojadas en Supabase con algún grado de datos personales expuestos, según UpGuard citado por TechCrunch (25 sep 2026).</span>
+          <a href="https://techcrunch.com/2026/09/25/some-supabase-customers-are-publicly-exposing-reams-of-peoples-data-to-the-web/" target="_blank" rel="noopener" data-i18n="problem.src">Ver fuente</a>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="note" data-i18n="problem.note">Cada estudio usa un método y una muestra distintos. Mi trabajo es revisar tu app antes de que forme parte de una estadística.</p>
+  </div>
+</section>
+
+<!-- 3. CÓMO FUNCIONA -->
+<section id="como" class="section">
+  <div class="wrap">
+    <h2 data-i18n="how.h2">Cómo funciona</h2>
+    <ol class="steps">
+      <li><span class="n">1</span><h3 data-i18n="how.t1">Pagas</h3><p data-i18n="how.d1">Eliges tu paquete y pagas con un enlace seguro de Stripe. Sin cuentas ni registros.</p></li>
+      <li><span class="n">2</span><h3 data-i18n="how.t2">Llenas un formulario corto</h3><p data-i18n="how.d2">URL de tu app, accesos de prueba, flujos críticos y tu confirmación de permiso.</p></li>
+      <li><span class="n">3</span><h3 data-i18n="how.t3">Recibes el reporte</h3><p data-i18n="how.d3">Con hallazgos priorizados, pasos para reproducirlos y cómo corregirlos, en el plazo de tu paquete.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. PAQUETES -->
+<section id="paquetes" class="section alt">
+  <div class="wrap">
+    <h2 data-i18n="pricing.h2">Paquetes</h2>
+    <p class="sub" data-i18n="pricing.sub">Precios en dólares (USD); el equivalente en pesos es aproximado (≈18.16 MXN por USD). Precio de lanzamiento solo para los primeros 3 clientes.</p>
+    <div class="cards">
+
+      <article id="chequeo" class="card">
+        <p class="badge muted" data-i18n="pricing.ch.badge">Sin costo</p>
+        <h3 data-i18n="pricing.ch.name">Chequeo rápido</h3>
+        <p class="price"><span data-i18n="pricing.free">Gratis</span></p>
+        <ul>
+          <li><span class="todo">[COMPLETAR: alcance del chequeo]</span></li>
+        </ul>
+        <a class="btn btn-ghost" href="https://tally.so/r/ob429x" data-tally rel="noopener" data-i18n="pricing.ch.cta">Solicitar chequeo</a>
+      </article>
+
+      <article id="flujo" class="card">
+        <p class="badge muted" data-i18n="pricing.fl.badge">Un solo flujo</p>
+        <h3 data-i18n="pricing.fl.name">Revisión de un flujo</h3>
+        <p class="price"><span>$59</span> <small data-i18n="pricing.fl.unit">USD · ≈ $1,070 MXN</small></p>
+        <ul>
+          <li data-i18n="pricing.fl.l1">Revisión a fondo de un flujo crítico (por ejemplo, registro, login o pago)</li>
+          <li><span class="todo">[COMPLETAR: plazo y entregable]</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#intake" data-pay="flujo" data-i18n="pricing.fl.cta">Pedir revisión — $59</a>
+      </article>
+
+      <article id="express" class="card featured">
+        <p class="badge" data-i18n="pricing.ex.badge">Para empezar</p>
+        <h3 data-i18n="pricing.ex.name">Revisión Express</h3>
+        <p class="price"><span>$49</span> <s>$99</s> <small data-i18n="pricing.ex.unit">USD · ≈ $890 MXN · 48 h</small></p>
+        <p class="launch" data-i18n="pricing.launch">Precio de lanzamiento, primeros 3 clientes. Precio regular: $99 (≈ $1,800 MXN).</p>
+        <ul>
+          <li data-i18n="pricing.ex.l1">Flujos críticos: registro, login y pago</li>
+          <li data-i18n="pricing.ex.l2">Revisión de llaves expuestas y RLS en Supabase</li>
+          <li data-i18n="pricing.ex.l3">Accesibilidad básica</li>
+          <li data-i18n="pricing.ex.l4">Hallazgos priorizados por severidad</li>
+        </ul>
+        <p class="guarantee" data-i18n="pricing.ex.guar"><strong>Garantía:</strong> si no encuentro al menos 5 hallazgos útiles, no pagas.</p>
+        <a class="btn btn-primary" href="#intake" data-pay="express" data-i18n="pricing.ex.cta">Pedir Revisión Express — $49</a>
+      </article>
+
+      <article id="auditoria" class="card">
+        <p class="badge muted" data-i18n="pricing.au.badge">Cobertura total</p>
+        <h3 data-i18n="pricing.au.name">Auditoría Completa</h3>
+        <p class="price"><span>$249</span> <s>$449</s> <small data-i18n="pricing.au.unit">USD · ≈ $4,520 MXN · 5 días hábiles</small></p>
+        <p class="launch" data-i18n="pricing.launch2">Precio de lanzamiento, primeros 3 clientes. Precio regular: $449 (≈ $8,150 MXN).</p>
+        <ul>
+          <li data-i18n="pricing.au.l1">Todo lo de la Revisión Express</li>
+          <li data-i18n="pricing.au.l2">Pruebas funcionales de toda la app, móvil y escritorio</li>
+          <li data-i18n="pricing.au.l3">Rendimiento y textos ES/EN</li>
+          <li data-i18n="pricing.au.l4">Plan de lanzamiento y reversa</li>
+          <li data-i18n="pricing.au.l5">Paquete de pruebas Playwright</li>
+          <li data-i18n="pricing.au.l6">Llamada de 30 min y re-test a 7 días</li>
+        </ul>
+        <a class="btn btn-primary" href="#intake" data-pay="auditoria" data-i18n="pricing.au.cta">Pedir Auditoría — $249</a>
+      </article>
+
+      <article id="mensual" class="card">
+        <p class="badge muted" data-i18n="pricing.me.badge">Continuo</p>
+        <h3 data-i18n="pricing.me.name">Acompañamiento mensual</h3>
+        <p class="price"><span>$349</span> <small data-i18n="pricing.me.unit">USD / mes · ≈ $6,340 MXN</small></p>
+        <ul>
+          <li data-i18n="pricing.me.l1">Revisión de cada release antes de publicar (hasta 4 al mes)</li>
+          <li data-i18n="pricing.me.l2">Regresión</li>
+          <li data-i18n="pricing.me.l3">Reporte por release</li>
+        </ul>
+        <a class="btn btn-primary" href="#intake" data-pay="mensual" data-i18n="pricing.me.cta">Suscribirme — $349/mes</a>
+      </article>
+
+      <article id="checklist" class="card">
+        <p class="badge muted" data-i18n="pricing.ck.badge">Hazlo tú</p>
+        <h3 data-i18n="pricing.ck.name">Checklist pre-lanzamiento</h3>
+        <p class="price"><span>$19</span> <small data-i18n="pricing.ck.unit">USD · ≈ $350 MXN</small></p>
+        <ul>
+          <li><span class="todo">[COMPLETAR: formato y contenido del checklist]</span></li>
+        </ul>
+        <a class="btn btn-primary" href="/" data-pay="checklist" data-i18n="pricing.ck.cta">Comprar checklist — $19</a>
+      </article>
+
+    </div>
+    <p class="sample flag flag-sample">
+      <a class="btn btn-ghost" href="/muestra.pdf" data-sample target="_blank" rel="noopener" data-i18n="pricing.sample">Descargar reporte de muestra (PDF)</a>
+    </p>
+  </div>
+</section>
+
+<!-- 5. QUÉ RECIBES -->
+<section id="recibes" class="section">
+  <div class="wrap">
+    <h2 data-i18n="rec.h2">Qué recibes</h2>
+    <p class="sub" data-i18n="rec.sub">Un reporte pensado para decidir y actuar, no para impresionar.</p>
+    <div class="grid2">
+      <div class="panel">
+        <h3 data-i18n="rec.verdict.h">Veredicto de lanzamiento</h3>
+        <p data-i18n="rec.verdict.p">Una respuesta directa: <strong>Sí</strong>, <strong>No</strong> o <strong>Con condiciones</strong>.</p>
+        <h3 data-i18n="rec.score.h">Puntaje de 0 a 100 por área</h3>
+        <ul class="chips">
+          <li data-i18n="rec.a1">Funcionalidad</li>
+          <li data-i18n="rec.a2">Seguridad básica</li>
+          <li data-i18n="rec.a3">Accesibilidad</li>
+          <li data-i18n="rec.a4">Rendimiento</li>
+          <li data-i18n="rec.a5">Privacidad</li>
+          <li data-i18n="rec.a6">Pagos</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 data-i18n="rec.find.h">Hallazgos por severidad</h3>
+        <p data-i18n="rec.find.p">Cada hallazgo incluye pasos para reproducirlo y un prompt de arreglo que puedes pegar en tu herramienta de IA.</p>
+        <h3 data-i18n="rec.id.h">ID de reporte verificable</h3>
+        <p><span data-i18n="rec.id.p">Cada reporte lleva un ID que cualquiera puede comprobar en</span> <a href="/verificar.html" data-i18n="rec.id.link">la página de verificación</a>.</p>
+      </div>
+    </div>
+
+    <h3 class="sect-h" data-i18n="rec.diff.h">Lo que lo hace distinto</h3>
+    <div class="grid2">
+      <div class="panel">
+        <h3 data-i18n="rec.la.h">Revisión para Latinoamérica</h3>
+        <p data-i18n="rec.la.p">Pagos locales, datos locales (RFC, CURP, CPF, RUT, DNI) y aviso de privacidad según el país, con más profundidad en México. No es asesoría legal.</p>
+      </div>
+      <div class="panel">
+        <h3 data-i18n="rec.plan.h">Plan de lanzamiento y reversa + pruebas Playwright</h3>
+        <p data-i18n="rec.plan.p">Incluidos en la Auditoría Completa: cómo publicar y cómo volver atrás si algo sale mal, y un paquete de pruebas automatizadas que tu equipo puede seguir ejecutando.</p>
+      </div>
+      <div class="panel flag flag-seal">
+        <h3 data-i18n="rec.seal.h">Sello verificable</h3>
+        <p data-i18n="rec.seal.p">[COMPLETAR: descripción del sello]</p>
+      </div>
+    </div>
+
+    <h3 class="sect-h" data-i18n="rec.fw.h">Marcos de referencia</h3>
+    <p class="note" data-i18n="rec.fw.p">Mi revisión está alineada con estos marcos. No equivale a una evaluación formal de cumplimiento.</p>
+    <div class="table-wrap">
+      <table class="fw">
+        <thead><tr><th data-i18n="rec.fw.c1">Área</th><th data-i18n="rec.fw.c2">Referencia</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="rec.fw.r1a">Calidad de software</td><td>ISTQB / ISO 25010</td></tr>
+          <tr><td data-i18n="rec.fw.r2a">Seguridad</td><td data-i18n="rec.fw.r2b">OWASP Top 10:2025 y ASVS 5.0.0</td></tr>
+          <tr><td data-i18n="rec.fw.r3a">Accesibilidad</td><td>WCAG 2.2 AA</td></tr>
+          <tr><td data-i18n="rec.fw.r4a">Rendimiento</td><td>Core Web Vitals</td></tr>
+          <tr><td data-i18n="rec.fw.r5a">Privacidad (México)</td><td data-i18n="rec.fw.r5b">LFPDPPP (no es asesoría legal)</td></tr>
+          <tr><td data-i18n="rec.fw.r6a">Pagos</td><td data-i18n="rec.fw.r6b">Checkout alojado (no es una evaluación PCI)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 7. QUIÉN ESTÁ DETRÁS -->
+<section id="quien" class="section alt">
+  <div class="wrap about">
+    <picture>
+      <source type="image/webp" srcset="/img/claudia-acosta-400.webp 400w, /img/claudia-acosta-800.webp 800w" sizes="(min-width:760px) 280px, 200px">
+      <img src="/img/claudia-acosta-800.jpg" alt="Claudia Acosta" width="800" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:about.alt">
+    </picture>
+    <div>
+      <h2 data-i18n="about.h2">Quién está detrás</h2>
+      <p data-i18n="about.p1">Soy Claudia Acosta, ingeniera de QA. He pasado años probando software donde un error cuesta dinero de verdad, y ahora aplico ese mismo rigor a las apps creadas con IA.</p>
+      <ul class="facts">
+        <li data-i18n="about.f1"><strong>14+ años</strong> en QA en banca y fintech</li>
+        <li data-i18n="about.f2"><strong>25+ releases</strong> sin rollbacks mayores</li>
+      </ul>
+      <p><a class="link" href="https://dragonflaiqa.com" target="_blank" rel="noopener" data-i18n="about.link">Conoce más en dragonflaiqa.com →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section id="faq" class="section">
+  <div class="wrap narrow">
+    <h2 data-i18n="faq.h2">Preguntas frecuentes</h2>
+    <details>
+      <summary data-i18n="faq.q1">¿Necesito darte permiso para probar mi app?</summary>
+      <p data-i18n="faq.a1">Sí. Solo reviso apps con autorización escrita de su dueño. En el formulario confirmas que la tienes, y si la app es de un tercero (por ejemplo, de tu cliente), te pediré su autorización por escrito.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.q2">¿Qué accesos necesito?</summary>
+      <p data-i18n="faq.a2">La URL de tu app y cuentas de prueba (idealmente una por cada rol). No necesito tu código ni contraseñas reales de producción: usa cuentas de prueba, nunca datos de clientes reales.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.q3">¿Qué NO cubre?</summary>
+      <p data-i18n="faq.a3">No es un pentest ni un dictamen formal de seguridad o cumplimiento, y no garantiza la ausencia de fallas. Es una revisión de QA enfocada en lo más común en apps creadas con IA; reduce el riesgo, no lo elimina. Tampoco es asesoría legal.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.q4">¿En qué idioma recibo el reporte?</summary>
+      <p data-i18n="faq.a4">En español o en inglés, el que prefieras. Lo indicas en el formulario.</p>
+    </details>
+  </div>
+</section>
+
+<!-- 9. INTAKE -->
+<section id="intake" class="section alt">
+  <div class="wrap narrow center">
+    <h2 data-i18n="intake.h2">Formulario de inicio</h2>
+    <p class="sub" data-i18n="intake.sub">Después de pagar, cuéntame sobre tu app: URL, accesos de prueba, flujos críticos, stack y la confirmación de que tienes permiso. Toma unos 5 minutos.</p>
+    <a class="btn btn-primary" href="https://tally.so/r/ob429x" data-tally target="_blank" rel="noopener" data-i18n="intake.cta">Abrir el formulario</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p>© <span id="year">2026</span> TestingVibe · <span data-i18n="foot.by">por Claudia Acosta</span></p>
+    <p><a href="/terminos.html" data-i18n="foot.terms">Términos</a> · <a href="/verificar.html" data-i18n="foot.verify">Verificar reporte</a> · <a href="https://dragonflaiqa.com" target="_blank" rel="noopener">dragonflaiqa.com</a> · <a href="https://calendly.com/clauliz-acosta/30min" data-calendly rel="noopener" data-i18n="hero.cta2">Agenda 30 minutos</a></p>
+  </div>
+</footer>
+
+<script src="/js/i18n.js" defer></script>
+<script src="/js/main.js" defer></script>
+</body>
+</html>
