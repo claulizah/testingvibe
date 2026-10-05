@@ -141,7 +141,8 @@
 <section id="paquetes" class="section alt">
   <div class="wrap">
     <h2 data-i18n="pricing.h2">Paquetes</h2>
-    <p class="sub" data-i18n="pricing.sub">Precios en dólares (USD); el equivalente en pesos es aproximado (≈18.16 MXN por USD). Precio de lanzamiento solo para los primeros 3 clientes.</p>
+    <p class="sub" data-i18n="pricing.sub">Precios en dólares (USD); el equivalente en pesos es aproximado (≈18.16 MXN por USD). </p>
+    <p class="notice" data-i18n="pricing.notice"><strong>Primeros 3 clientes:</strong> $49 (Revisión Express) y $249 (Auditoría Completa) con código de lanzamiento.</p>
     <div class="cards">
 
       <article id="chequeo" class="card">
@@ -149,7 +150,9 @@
         <h3 data-i18n="pricing.ch.name">Chequeo rápido</h3>
         <p class="price"><span data-i18n="pricing.free">Gratis</span></p>
         <ul>
-          <li><span class="todo">[COMPLETAR: alcance del chequeo]</span></li>
+          <li data-i18n="pricing.ch.l1">Revisión automática de lo visible desde fuera de tu app: HTTPS, cabeceras de seguridad, llaves expuestas en el navegador, errores de consola, enlaces rotos y rendimiento móvil.</li>
+          <li data-i18n="pricing.ch.l2">Resumen de una página en 24 horas hábiles.</li>
+          <li data-i18n="pricing.ch.l3">No incluye pruebas con sesión iniciada.</li>
         </ul>
         <a class="btn btn-ghost" href="https://tally.so/r/ob429x" data-tally rel="noopener" data-i18n="pricing.ch.cta">Solicitar chequeo</a>
       </article>
@@ -159,8 +162,9 @@
         <h3 data-i18n="pricing.fl.name">Revisión de un flujo</h3>
         <p class="price"><span>$59</span> <small data-i18n="pricing.fl.unit">USD · ≈ $1,070 MXN</small></p>
         <ul>
-          <li data-i18n="pricing.fl.l1">Revisión a fondo de un flujo crítico (por ejemplo, registro, login o pago)</li>
-          <li><span class="todo">[COMPLETAR: plazo y entregable]</span></li>
+          <li data-i18n="pricing.fl.l1">Un flujo crítico (registro, login o pago) probado a fondo en 24 a 48 horas.</li>
+          <li data-i18n="pricing.fl.l2">PDF corto con hallazgos, evidencia y prompts de arreglo.</li>
+          <li data-i18n="pricing.fl.l3">No incluye puntaje completo, llamada ni re-test.</li>
         </ul>
         <a class="btn btn-primary" href="#intake" data-pay="flujo" data-i18n="pricing.fl.cta">Pedir revisión — $59</a>
       </article>
@@ -168,8 +172,8 @@
       <article id="express" class="card featured">
         <p class="badge" data-i18n="pricing.ex.badge">Para empezar</p>
         <h3 data-i18n="pricing.ex.name">Revisión Express</h3>
-        <p class="price"><span>$49</span> <s>$99</s> <small data-i18n="pricing.ex.unit">USD · ≈ $890 MXN · 48 h</small></p>
-        <p class="launch" data-i18n="pricing.launch">Precio de lanzamiento, primeros 3 clientes. Precio regular: $99 (≈ $1,800 MXN).</p>
+        <p class="price"><span>$99</span> <small data-i18n="pricing.ex.unit">USD · ≈ $1,800 MXN · 48 h</small></p>
+        <p class="launch" data-i18n="pricing.launch">Primeros 3 clientes: $49 con código de lanzamiento.</p>
         <ul>
           <li data-i18n="pricing.ex.l1">Flujos críticos: registro, login y pago</li>
           <li data-i18n="pricing.ex.l2">Revisión de llaves expuestas y RLS en Supabase</li>
@@ -177,14 +181,14 @@
           <li data-i18n="pricing.ex.l4">Hallazgos priorizados por severidad</li>
         </ul>
         <p class="guarantee" data-i18n="pricing.ex.guar"><strong>Garantía:</strong> si no encuentro al menos 5 hallazgos útiles, no pagas.</p>
-        <a class="btn btn-primary" href="#intake" data-pay="express" data-i18n="pricing.ex.cta">Pedir Revisión Express — $49</a>
+        <a class="btn btn-primary" href="#intake" data-pay="express" data-i18n="pricing.ex.cta">Pedir Revisión Express — $99</a>
       </article>
 
       <article id="auditoria" class="card">
         <p class="badge muted" data-i18n="pricing.au.badge">Cobertura total</p>
         <h3 data-i18n="pricing.au.name">Auditoría Completa</h3>
-        <p class="price"><span>$249</span> <s>$449</s> <small data-i18n="pricing.au.unit">USD · ≈ $4,520 MXN · 5 días hábiles</small></p>
-        <p class="launch" data-i18n="pricing.launch2">Precio de lanzamiento, primeros 3 clientes. Precio regular: $449 (≈ $8,150 MXN).</p>
+        <p class="price"><span>$449</span> <small data-i18n="pricing.au.unit">USD · ≈ $8,150 MXN · 5 días hábiles</small></p>
+        <p class="launch" data-i18n="pricing.launch2">Primeros 3 clientes: $249 con código de lanzamiento.</p>
         <ul>
           <li data-i18n="pricing.au.l1">Todo lo de la Revisión Express</li>
           <li data-i18n="pricing.au.l2">Pruebas funcionales de toda la app, móvil y escritorio</li>
@@ -193,7 +197,7 @@
           <li data-i18n="pricing.au.l5">Paquete de pruebas Playwright</li>
           <li data-i18n="pricing.au.l6">Llamada de 30 min y re-test a 7 días</li>
         </ul>
-        <a class="btn btn-primary" href="#intake" data-pay="auditoria" data-i18n="pricing.au.cta">Pedir Auditoría — $249</a>
+        <a class="btn btn-primary" href="#intake" data-pay="auditoria" data-i18n="pricing.au.cta">Pedir Auditoría — $449</a>
       </article>
 
       <article id="mensual" class="card">
@@ -208,7 +212,7 @@
         <a class="btn btn-primary" href="#intake" data-pay="mensual" data-i18n="pricing.me.cta">Suscribirme — $349/mes</a>
       </article>
 
-      <article id="checklist" class="card">
+      <article id="checklist" class="card flag flag-checklist">
         <p class="badge muted" data-i18n="pricing.ck.badge">Hazlo tú</p>
         <h3 data-i18n="pricing.ck.name">Checklist pre-lanzamiento</h3>
         <p class="price"><span>$19</span> <small data-i18n="pricing.ck.unit">USD · ≈ $350 MXN</small></p>
@@ -282,6 +286,18 @@
           <tr><td data-i18n="rec.fw.r6a">Pagos</td><td data-i18n="rec.fw.r6b">Checkout alojado (no es una evaluación PCI)</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios (flag SHOW_TESTIMONIALS) -->
+<section id="testimonios" class="section flag flag-testimonials">
+  <div class="wrap">
+    <h2 data-i18n="testi.h2">Lo que dicen quienes ya lanzaron</h2>
+    <div class="cards">
+      <blockquote class="card">[COMPLETAR: testimonio 1 — nombre, rol, app]</blockquote>
+      <blockquote class="card">[COMPLETAR: testimonio 2 — nombre, rol, app]</blockquote>
+      <blockquote class="card">[COMPLETAR: testimonio 3 — nombre, rol, app]</blockquote>
     </div>
   </div>
 </section>

@@ -4,7 +4,7 @@ Landing estática + blog (HTML/CSS/JS sin dependencias). Hosting: GitHub Pages c
 
 > ## ⚠️ ANTES DE PUBLICAR: cambiar los enlaces de Stripe a los reales
 > Los Payment Links de `js/links.js` son de **PRUEBA** (`buy.stripe.com/test_…`). Mientras haya alguno, el sitio muestra una franja “MODO PRUEBA”.
-> Reemplázalos por los reales y verifica que cada enlace cobre el precio que muestra la página (precios de lanzamiento: Revisión Express $49 y Auditoría Completa $249, solo para los primeros 3 clientes; al terminar, actualiza el enlace y el precio de la página).
+> Reemplázalos por los reales y verifica que cada enlace cobre el precio que muestra la página (la página muestra precio de lista ($99 y $449); los precios de lanzamiento ($49 y $249, primeros 3 clientes) se aplican con un código de lanzamiento en Stripe).
 
 ## Previsualizar
 
@@ -20,7 +20,7 @@ Las rutas son absolutas (`/css/...`): sirve la carpeta desde la raíz; abrir el 
 | Archivo | Contiene |
 |---|---|
 | `js/links.js` | Stripe Payment Links, Tally, Calendly |
-| `js/config.js` | Flags (`SHOW_SAMPLE_REPORT`, `SHOW_SEAL`, `SHOW_BLOG`, todos `false`), `CF_ANALYTICS_TOKEN`, ruta del PDF de muestra |
+| `js/config.js` | Flags (`SHOW_TESTIMONIALS`, `SHOW_CHECKLIST`, `SHOW_SAMPLE_REPORT`, `SHOW_SEAL`, `SHOW_BLOG`, todos `false`), `CF_ANALYTICS_TOKEN`, ruta del PDF de muestra |
 | `js/i18n.js` | Traducciones EN (el ES vive en el HTML) |
 | `data/reports.json` | Reportes verificables en `/verificar.html` |
 
