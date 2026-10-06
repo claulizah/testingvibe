@@ -1,7 +1,7 @@
 /* Enlaces externos en un solo lugar. Cambia aquí los Stripe Payment Links.
    ⚠️  Los enlaces de Stripe de abajo son de PRUEBA (/test_). Reemplázalos por los reales antes de publicar.
    Mientras alguno contenga "/test_", el sitio muestra un aviso de modo prueba.
-   Cada enlace debe cobrar el precio que muestra la página (el precio de lanzamiento, mientras dure). */
+   Cada enlace debe cobrar el precio de lista que muestra la página. */
 window.TV_LINKS = {
   EMAIL: "contacto@testingvibe.com",
   CALENDLY: "https://calendly.com/clauliz-acosta/30min",
