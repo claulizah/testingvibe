@@ -4,6 +4,7 @@
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
+  [].forEach.call(document.querySelectorAll("[data-mail]"), function (a) { if (L.EMAIL) a.href = "mailto:" + L.EMAIL; });
   [].forEach.call(document.querySelectorAll("[data-calendly]"), function (a) { if (L.CALENDLY) a.href = L.CALENDLY; });
   [].forEach.call(document.querySelectorAll("[data-tally]"), function (a) { if (L.TALLY) a.href = L.TALLY; });
   [].forEach.call(document.querySelectorAll("[data-sample]"), function (a) { if (C.SAMPLE_PDF) a.href = C.SAMPLE_PDF; });

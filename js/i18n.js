@@ -137,6 +137,7 @@
     "foot.by": "by Claudia Acosta",
     "foot.terms": "Terms",
     "foot.verify": "Verify report",
+    "foot.contact": "Email me",
 
     "terms.title": "Terms of service — TestingVibe",
     "terms.h1": "Terms of service",

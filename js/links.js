@@ -3,6 +3,7 @@
    Mientras alguno contenga "/test_", el sitio muestra un aviso de modo prueba.
    Cada enlace debe cobrar el precio que muestra la página (el precio de lanzamiento, mientras dure). */
 window.TV_LINKS = {
+  EMAIL: "contacto@testingvibe.com",
   CALENDLY: "https://calendly.com/clauliz-acosta/30min",
   TALLY: "https://tally.so/r/ob429x",
   STRIPE: {
