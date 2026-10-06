@@ -34,10 +34,10 @@
 
     "pricing.h2": "Packages",
     "pricing.sub": "Prices in US dollars (USD); the peso equivalent is approximate (≈18.16 MXN per USD).",
-    "pricing.notice": "<strong>First 3 clients:</strong> $49 (Express Review) and $249 (Complete Audit) with a launch code.",
     "pricing.free": "Free",
-    "pricing.launch": "First 3 clients: $49 with a launch code.",
-    "pricing.launch2": "First 3 clients: $249 with a launch code.",
+    "pricing.cases": "Case study program: 3 spots at a special price in exchange for your testimonial.",
+    "pricing.casesMail": "Email me",
+    "pricing.casesCal": "or book 30 minutes",
     "pricing.ch.badge": "No cost", "pricing.ch.name": "Quick check", "pricing.ch.cta": "Request a check",
     "pricing.ch.l1": "Automated review of what is visible from outside your app: HTTPS, security headers, keys exposed in the browser, console errors, broken links and mobile performance.",
     "pricing.ch.l2": "One-page summary within 24 business hours.",

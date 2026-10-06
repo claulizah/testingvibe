@@ -4,7 +4,7 @@ Landing estática + blog (HTML/CSS/JS sin dependencias). Hosting: GitHub Pages c
 
 > ## ⚠️ ANTES DE PUBLICAR: cambiar los enlaces de Stripe a los reales
 > Los Payment Links de `js/links.js` son de **PRUEBA** (`buy.stripe.com/test_…`). Mientras haya alguno, el sitio muestra una franja “MODO PRUEBA”.
-> Reemplázalos por los reales y verifica que cada enlace cobre el precio que muestra la página (la página muestra precio de lista ($99 y $449); los precios de lanzamiento ($49 y $249, primeros 3 clientes) se aplican con un código de lanzamiento en Stripe).
+> Reemplázalos por los reales y verifica que cada enlace cobre el precio que muestra la página (la página muestra solo el precio de lista ($99 y $449). Los precios especiales del programa de casos de estudio se acuerdan por correo; no se publica ningún código de descuento).
 
 ## Previsualizar
 
