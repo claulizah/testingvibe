@@ -42,6 +42,8 @@
     "pricing.ch.l1": "Automated review of what is visible from outside your app: HTTPS, security headers, keys exposed in the browser, console errors, broken links and mobile performance.",
     "pricing.ch.l2": "One-page summary within 24 business hours.",
     "pricing.ch.l3": "Does not include logged-in testing.",
+    "pricing.ch.l4": "Limited spots each week.",
+    "pricing.ch.l5": "Only for apps you own or have written permission to test.",
     "pricing.fl.badge": "One flow", "pricing.fl.name": "Single-flow review",
     "pricing.fl.unit": "USD · ≈ $1,070 MXN",
     "pricing.fl.l1": "One critical flow (sign-up, login or payment) tested in depth within 24 to 48 hours.",

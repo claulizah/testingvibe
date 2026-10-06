@@ -6,7 +6,7 @@
 
   [].forEach.call(document.querySelectorAll("[data-mail]"), function (a) { if (L.EMAIL) a.href = "mailto:" + L.EMAIL; });
   [].forEach.call(document.querySelectorAll("[data-calendly]"), function (a) { if (L.CALENDLY) a.href = L.CALENDLY; });
-  [].forEach.call(document.querySelectorAll("[data-tally]"), function (a) { if (L.TALLY) a.href = L.TALLY; });
+  [].forEach.call(document.querySelectorAll("[data-tally]"), function (a) { var u = L["TALLY_" + a.dataset.tally.toUpperCase()]; if (u) a.href = u; });
   [].forEach.call(document.querySelectorAll("[data-sample]"), function (a) { if (C.SAMPLE_PDF) a.href = C.SAMPLE_PDF; });
 
   // Stripe Payment Links desde links.js

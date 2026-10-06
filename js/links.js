@@ -5,7 +5,8 @@
 window.TV_LINKS = {
   EMAIL: "contacto@testingvibe.com",
   CALENDLY: "https://calendly.com/clauliz-acosta/30min",
-  TALLY: "https://tally.so/r/ob429x",
+  TALLY_CHEQUEO: "https://tally.so/r/xXeyyE", // formulario del Chequeo rápido
+  TALLY_INTAKE: "https://tally.so/r/ob429x",  // formulario de inicio de todos los paquetes de pago
   STRIPE: {
     express: "https://buy.stripe.com/test_bJefZi2Md7sn5xC4eEd3i00",
     auditoria: "https://buy.stripe.com/test_eVqaEYeuVaEz4ty26wd3i01",
