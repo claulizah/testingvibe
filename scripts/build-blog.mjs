@@ -1,4 +1,6 @@
 // Genera blog/index.html y blog/<slug>/index.html desde content/blog/*.md (sin dependencias).
+// Mientras el blog esté fuera de la publicación, trabaja en _borradores/ (fuentes en _borradores/blog-fuentes y salida en _borradores/blog).
+// Con --publicar usa las rutas reales (content/blog → blog/): hacerlo solo cuando haya artículos reales y SHOW_BLOG esté activo.
 // Uso: node scripts/build-blog.mjs
 // Front matter: title, date (YYYY-MM-DD), description, lang (es|en). Los borradores usan "draft: true" y se omiten.
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from "node:fs";
@@ -6,8 +8,10 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const src = join(root, "content", "blog");
-const out = join(root, "blog");
+const publicar = process.argv.includes("--publicar");
+const src = publicar ? join(root, "content", "blog") : join(root, "_borradores", "blog-fuentes");
+const out = publicar ? join(root, "blog") : join(root, "_borradores", "blog");
+mkdirSync(out, { recursive: true });
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 

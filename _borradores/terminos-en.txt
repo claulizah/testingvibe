@@ -1,0 +1,13 @@
+// Textos EN de la página de Términos (terminos.html), retirados de js/i18n.js hasta que el texto legal esté listo.
+// Para volver a publicarla: pegar estas líneas en js/i18n.js (dentro del objeto EN), mover terminos.html a la raíz,
+// enlazarla en el pie de index.html y reemplazar "terms.todo" por el texto legal real.
+    "foot.terms": "Terms",
+    "terms.title": "Terms of service — TestingVibe",
+    "terms.h1": "Terms of service",
+    "terms.draft": "Draft: legal text pending; requires legal review.",
+    "terms.scope": "Scope", "terms.scopeHint": "What the services include and exclude, and that this is not a pentest.",
+    "terms.permission": "Permission", "terms.permissionHint": "Testing happens only with the app owner's written authorization.",
+    "terms.liability": "Limitation of liability", "terms.liabilityHint": "No guarantee of the absence of flaws; liability cap.",
+    "terms.confidentiality": "Confidentiality", "terms.confidentialityHint": "Handling of access credentials, data and findings.",
+    "terms.refund": "Refunds", "terms.refundHint": "Express Review guarantee (fewer than 5 useful findings) and other cases.",
+    "terms.todo": "[COMPLETAR: legal text]",
