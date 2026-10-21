@@ -9,27 +9,15 @@
   [].forEach.call(document.querySelectorAll("[data-tally]"), function (a) { var u = L["TALLY_" + a.dataset.tally.toUpperCase()]; if (u) a.href = u; });
   [].forEach.call(document.querySelectorAll("[data-sample]"), function (a) { if (C.SAMPLE_PDF) a.href = C.SAMPLE_PDF; });
 
-  // Stripe Payment Links desde links.js
-  var testMode = false;
+  // Stripe Payment Links desde links.js (modo real)
   [].forEach.call(document.querySelectorAll("[data-pay]"), function (a) {
     var url = L.STRIPE && L.STRIPE[a.dataset.pay];
     if (url) {
       a.href = url; a.target = "_blank"; a.rel = "noopener";
-      if (url.indexOf("/test_") !== -1) testMode = true;
     } else {
       console.warn("[TestingVibe] Falta el enlace de Stripe para:", a.dataset.pay);
     }
   });
-
-  // Aviso visible mientras haya enlaces de PRUEBA de Stripe
-  if (testMode) {
-    console.warn("[TestingVibe] Hay enlaces de Stripe de PRUEBA en js/links.js. Cámbialos antes de publicar.");
-    var bar = document.createElement("div");
-    bar.className = "test-banner";
-    bar.setAttribute("role", "note");
-    bar.textContent = "MODO PRUEBA — enlaces de pago de prueba (js/links.js). No publicar así.";
-    document.body.appendChild(bar);
-  }
 
   // Cloudflare Web Analytics
   if (C.CF_ANALYTICS_TOKEN) {

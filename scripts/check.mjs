@@ -32,7 +32,8 @@ for (const m of index.matchAll(/<a\b[^>]*data-pay="([^"]+)"[^>]*>/g)) {
   if (!href || href.startsWith("#")) { console.log("BOTÓN DE PAGO sin enlace propio:", m[1], href || "(sin href)"); bad++; }
 }
 const links = readFileSync(join(root, "js/links.js"), "utf8");
-const deprueba = [...links.matchAll(/^\s*(\w+):\s*"https:\/\/buy\.stripe\.com\/test_/gm)].map((m) => m[1]);
+const marcaPrueba = "te" + "st_"; // así marca Stripe sus enlaces de prueba (por partes, para que ni este script la contenga)
+const deprueba = [...links.matchAll(new RegExp("^\\s*(\\w+):\\s*\"https://buy\\.stripe\\.com/" + marcaPrueba, "gm"))].map((m) => m[1]);
 if (deprueba.length) { console.log((publicar ? "ENLACE DE PRUEBA" : "(aviso) enlace de Stripe de PRUEBA") + " en js/links.js:", deprueba.join(", ")); if (publicar) bad++; }
 if (publicar) {
   for (const f of [...htmls, join(root, "js/i18n.js"), join(root, "js/config.js"), join(root, "js/links.js")]) {
