@@ -37,7 +37,12 @@ Artículos en `content/blog/*.md` (ver `_plantilla.md`), firmados “Por Claudia
 
 ## Verificación
 
-`node scripts/check.mjs` — traducciones EN completas y sin enlaces internos rotos.
+`node scripts/check.mjs` — traducciones EN completas, sin enlaces internos rotos ni anclas muertas, sin `[COMPLETAR` en `index.html` y sin botones de pago apuntando a `#intake`.
+
+`node scripts/check.mjs --publicar` — modo estricto, para correr justo antes de publicar: además falla si queda algún Payment Link de **prueba** en `js/links.js` o algún `[COMPLETAR` en las páginas y scripts publicados.
+
+### Secciones ocultas hasta tener contenido real
+Checklist ($19), sello verificable y testimonios están **comentados** en `index.html` (con su flag en `js/config.js`). Para activar uno: escribir su contenido real, quitar el comentario y poner su flag en `true`.
 
 ## Dominio (GitHub Pages)
 
