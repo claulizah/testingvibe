@@ -1,6 +1,7 @@
 // Genera blog/index.html y blog/<slug>/index.html desde content/blog/*.md (sin dependencias).
-// Mientras el blog esté fuera de la publicación, trabaja en _borradores/ (fuentes en _borradores/blog-fuentes y salida en _borradores/blog).
-// Con --publicar usa las rutas reales (content/blog → blog/): hacerlo solo cuando haya artículos reales y SHOW_BLOG esté activo.
+// El blog está fuera del sitio publicado: sus borradores viven en la rama local «borradores-privados» (ver README, «Borradores en una rama aparte»).
+//   node scripts/build-blog.mjs --desde=<carpeta _borradores>   trabaja sobre los borradores (fuentes en <carpeta>/blog-fuentes, salida en <carpeta>/blog)
+//   node scripts/build-blog.mjs --publicar                      usa las rutas reales (content/blog → blog/): solo con artículos reales y SHOW_BLOG activo
 // Uso: node scripts/build-blog.mjs
 // Front matter: title, date (YYYY-MM-DD), description, lang (es|en). Los borradores usan "draft: true" y se omiten.
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from "node:fs";
@@ -9,8 +10,15 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicar = process.argv.includes("--publicar");
-const src = publicar ? join(root, "content", "blog") : join(root, "_borradores", "blog-fuentes");
-const out = publicar ? join(root, "blog") : join(root, "_borradores", "blog");
+const desde = (process.argv.find((a) => a.startsWith("--desde=")) || "").slice("--desde=".length);
+if (!publicar && !desde) {
+  console.error("El blog está fuera del sitio publicado. Trae los borradores de la rama «borradores-privados» (ver README) y corre:\n  node scripts/build-blog.mjs --desde=<carpeta _borradores>\no, con artículos reales:\n  node scripts/build-blog.mjs --publicar");
+  process.exit(1);
+}
+const base = desde ? join(process.cwd(), desde) : root;
+const src = publicar ? join(root, "content", "blog") : join(base, "blog-fuentes");
+const out = publicar ? join(root, "blog") : join(base, "blog");
+if (!existsSync(src)) { console.error(`No existe la carpeta de fuentes: ${src}`); process.exit(1); }
 mkdirSync(out, { recursive: true });
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

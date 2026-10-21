@@ -30,6 +30,30 @@ Agrega un registro por reporte entregado, **solo con consentimiento del cliente*
 { "reports": [ { "id": "TV-20261015-ABCD", "date": "2026-10-15", "package": "Revisión Express", "verdict": "Con condiciones" } ] }
 ```
 
+## Borradores en una rama aparte
+
+El **blog** (fuentes y salida generada) y la página de **Términos** (con sus textos EN) no están en el sitio publicado: viven en la rama local `borradores-privados` (carpeta `_borradores/`, más un `LEEME-BORRADORES.md`). El enlace «Blog» del menú está comentado en `index.html` y el de «Términos» ya no está en el pie.
+
+> **Esa rama no debe subirse con `git push`** si quieres que siga fuera del público: el repo es público y cualquier rama subida se puede leer. (Los archivos originales del blog y de Términos ya están en el historial de `main`.)
+
+**Trabajar con los borradores sin tocar esta rama:**
+```bash
+git worktree add ../testingvibe-borradores borradores-privados
+node scripts/build-blog.mjs --desde=../testingvibe-borradores/_borradores   # regenera el blog de borradores
+```
+(`scripts/check.mjs` ignora las carpetas que empiezan con `_`.)
+
+**Volver a publicar el blog:** copiar los artículos reales de `_borradores/blog-fuentes/` a `content/blog/`, correr `node scripts/build-blog.mjs --publicar` (genera `blog/`), restaurar el enlace del menú en `index.html`, poner `SHOW_BLOG` en `true`, quitar el `noindex` del script, el `Disallow: /blog/` de `robots.txt` y añadir las URLs a `sitemap.xml`.
+
+**Volver a publicar los Términos:** copiar `_borradores/terminos.html` a la raíz, pegar sus textos EN de `_borradores/terminos-en.txt` en `js/i18n.js`, enlazarla en el pie de `index.html` y reemplazar el texto pendiente por el texto legal real.
+
+## Verificación de reportes
+Agrega un registro por reporte entregado, **solo con consentimiento del cliente** y sin datos sensibles:
+
+```json
+{ "reports": [ { "id": "TV-20261015-ABCD", "date": "2026-10-15", "package": "Revisión Express", "verdict": "Con condiciones" } ] }
+```
+
 ## Fuera de la publicación: _borradores/
 
 La carpeta `_borradores/` guarda, **sin enlazar y sin indexar**, lo que todavía no está listo: el **blog** (fuentes en `_borradores/blog-fuentes/`, salida generada en `_borradores/blog/`) y la página de **Términos** (`_borradores/terminos.html`, con sus textos EN en `_borradores/terminos-en.txt`). El enlace «Blog» del menú está comentado en `index.html` y el de «Términos» ya no está en el pie. `scripts/check.mjs` ignora las carpetas que empiezan con `_`. **Aviso:** GitHub Pages sirve todo lo que hay en la rama, así que esos archivos siguen alcanzables por URL directa (`robots.txt` los excluye de buscadores). Para sacarlos del todo, hay que guardarlos en otra rama.
