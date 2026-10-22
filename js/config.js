@@ -8,6 +8,10 @@ window.TV = {
   SHOW_SEAL: false,          // sello verificable: el bloque está comentado en index.html; descomentarlo y activar al tener 3 clientes
   SHOW_BLOG: false,          // enlace al blog en el menú
 
+  // Correo de contacto del sitio: mientras sea false, `node scripts/check.mjs --publicar` falla si la dirección aparece en el sitio o en un PDF publicado.
+  // Ponlo en true solo cuando el buzón esté activo y quieras publicar la dirección.
+  correoActivo: false,
+
   CF_ANALYTICS_TOKEN: "",    // PENDIENTE: token de Cloudflare Web Analytics
   SAMPLE_PDF: "/muestra.pdf" // PENDIENTE: subir muestra.pdf a la raíz
 };

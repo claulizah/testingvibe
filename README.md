@@ -79,6 +79,8 @@ Artículos en `content/blog/*.md` (ver `_plantilla.md`), firmados “Por Claudia
 
 `node scripts/check.mjs --publicar` — modo estricto, para correr justo antes de publicar: además falla si queda algún Payment Link de **prueba** en `js/links.js` o algún `[COMPLETAR` en las páginas y scripts publicados.
 
+**Correo de contacto:** `--publicar` también falla mientras el correo de contacto del sitio aparezca en algún archivo publicado (páginas, scripts, README…) o en un **PDF dentro del repo** y la bandera `correoActivo` de `js/config.js` no sea `true`. Cambia esa bandera solo cuando el buzón esté activo. «Publicado» es todo lo que está en el repo fuera de carpetas que empiezan con `_`: un PDF de muestra que solo vive en tu computadora (fuera del repo, o dentro de una carpeta `_`) no cuenta. En un PDF la dirección se detecta en su enlace `mailto:` y en sus cadenas literales; el texto visible solo se revisa si `pdfjs-dist` está instalado (si no, el script avisa).
+
 ### Secciones ocultas hasta tener contenido real
 Checklist ($19), sello verificable y testimonios están **comentados** en `index.html` (con su flag en `js/config.js`). Para activar uno: escribir su contenido real, quitar el comentario y poner su flag en `true`.
 
