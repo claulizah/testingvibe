@@ -36,7 +36,7 @@
     "pricing.sub": "Prices in US dollars (USD); the peso equivalent is approximate (≈18.16 MXN per USD).",
     "pricing.free": "Free",
     "pricing.launch": "Launch price",
-    "pricing.cases": "Case study program: 3 spots at a special price in exchange for your testimonial.",
+    "pricing.cases": "Complete Audit: the first 3 clients pay the launch price and, in exchange, give me a testimonial.",
     "pricing.casesMail": "Email me",
     "pricing.casesCal": "or book 30 minutes",
     "pricing.ch.badge": "No cost", "pricing.ch.name": "Quick check", "pricing.ch.cta": "Request a check",

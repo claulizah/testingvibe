@@ -3,7 +3,7 @@
 Landing estática + blog (HTML/CSS/JS sin dependencias). Hosting: GitHub Pages con dominio propio.
 
 > ## Enlaces de pago
-> Los Payment Links de `js/links.js` son los **reales** (modo real). Cada enlace debe cobrar el precio que muestra la página (el de lanzamiento en Completa y Acompañamiento, sin códigos promocionales ni `prefilled_promo_code`); los precios especiales del programa de casos de estudio se acuerdan por correo y no se publica ningún código de descuento. Los de Checklist y Revisión para negocios están guardados pero **no se muestran** en el sitio todavía.
+> Los Payment Links de `js/links.js` son los **reales** (modo real). Cada enlace debe cobrar el precio que muestra la página (el de lanzamiento en Completa y Acompañamiento, sin códigos promocionales ni `prefilled_promo_code`); el precio de lanzamiento de la Completa (primeros 3 clientes, a cambio de un testimonio) ya es el del enlace y no se publica ningún código de descuento. Los de Checklist y Revisión para negocios están guardados pero **no se muestran** en el sitio todavía.
 
 ## Previsualizar
 
