@@ -1,7 +1,7 @@
 /* ES es el idioma base (vive en el HTML: SEO y funciona sin JS). Aquí solo está EN. */
 (function () {
   var EN = {
-    "meta.title": "TestingVibe — Bank-grade QA for your software",
+    "meta.title": "TestingVibe — Find the flaws before your users do",
     "meta.desc": "Testing and quality assurance for modern software, with banking-grade rigor. QA review for apps, websites and platforms, with or without AI.",
     "meta.ogdesc": "Testing and quality assurance for modern software, with banking-grade rigor. Launch with confidence.",
     "a11y.skip": "Skip to content",
