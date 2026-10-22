@@ -10,7 +10,7 @@
 
     "hero.eyebrow": "For apps, websites and platforms, built with or without AI",
     "hero.h1a": "Find the flaws before your users do.",
-    "hero.h1b": "Launch with no surprises.",
+    "hero.h1b": "Launch with quality, not luck.",
     "hero.lead": "I test your app or site the way a real user would and hand you a clear report: what fails, how serious it is, and how to fix it.",
     "hero.cta1": "Request your review",
     "hero.cta2": "Book 30 minutes",
