@@ -1,15 +1,15 @@
 /* ES es el idioma base (vive en el HTML: SEO y funciona sin JS). Aquí solo está EN. */
 (function () {
   var EN = {
-    "meta.title": "TestingVibe — Bank-grade QA for apps built with AI",
-    "meta.desc": "Testing and quality assurance for modern software, with banking-grade rigor. QA review for apps built with Lovable, Bolt or Cursor + Supabase.",
+    "meta.title": "TestingVibe — Bank-grade QA for your software",
+    "meta.desc": "Testing and quality assurance for modern software, with banking-grade rigor. QA review for apps, websites and platforms, with or without AI.",
     "meta.ogdesc": "Testing and quality assurance for modern software, with banking-grade rigor. Launch with confidence.",
     "a11y.skip": "Skip to content",
     "nav.label": "Main", "nav.problem": "The problem", "nav.how": "How it works", "nav.pricing": "Packages", "nav.receive": "What you get", "nav.faq": "FAQ", "nav.blog": "Blog", "nav.advice": "Advisory",
     "lang.label": "Language",
 
-    "hero.eyebrow": "For apps built with Lovable, Bolt, Cursor + Supabase",
-    "hero.h1a": "Bank-grade QA for apps built with AI.",
+    "hero.eyebrow": "For apps, websites and platforms, built with or without AI",
+    "hero.h1a": "Bank-grade QA for your software.",
     "hero.h1b": "Launch with confidence.",
     "hero.lead": "Testing and quality assurance for modern software, with banking-grade rigor.",
     "hero.cta1": "Request your review",
@@ -124,7 +124,7 @@
     "adv.cta": "Tell me about your case",
 
     "about.p2": "I've led testing and releases at companies, and today I also support QA teams that want to test better with AI.",
-    "about.p1": "I'm Claudia Acosta, a QA engineer. I've spent years testing software where a bug costs real money, and now I bring that same rigor to apps built with AI.",
+    "about.p1": "I'm Claudia Acosta, a QA engineer. I've spent years testing software where a bug costs real money, and now I bring that same rigor to your software, including what's built with AI.",
     "about.f1": "<strong>14+ years</strong> in QA in banking and fintech",
     "about.f2": "<strong>25+ releases</strong> with no major rollbacks",
     "about.link": "Learn more at dragonflaiqa.com →",
@@ -135,7 +135,7 @@
     "faq.q2": "What access do you need?",
     "faq.a2": "Your app's URL and test accounts (ideally one per role). I don't need your code or real production passwords: use test accounts, never real customer data.",
     "faq.q3": "What does it NOT cover?",
-    "faq.a3": "It is not a pentest or a formal security or compliance opinion, and it doesn't guarantee the absence of flaws. It's a QA review focused on what's most common in AI-built apps; it reduces risk, it doesn't eliminate it. It is not legal advice either.",
+    "faq.a3": "It is not a pentest or a formal security or compliance opinion, and it doesn't guarantee the absence of flaws. It's a QA review focused on the most common problems in apps and websites, including AI-built ones; it reduces risk, it doesn't eliminate it. It is not legal advice either.",
     "faq.q4": "What language is the report in?",
     "faq.a4": "Spanish or English, your choice. You pick it in the form.",
 

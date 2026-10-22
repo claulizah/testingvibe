@@ -112,7 +112,7 @@ ${md(p.body)}</article>
 }
 
 writeFileSync(join(out, "index.html"),
-  head("Blog — TestingVibe", "Artículos sobre QA y seguridad básica para apps creadas con IA.", "/blog/", "es") +
+  head("Blog — TestingVibe", "Artículos sobre QA y seguridad básica para apps y sitios web.", "/blog/", "es") +
   `<h1 data-i18n="blog.h1">Blog</h1>
 ${posts.length ? `<ul class="post-list">\n${posts.map((p) => `<li><h2><a href="/blog/${p.slug}/">${esc(p.meta.title)}</a></h2><p class="byline">${esc(p.meta.date || "")} · ${(p.meta.lang || "es") === "en" ? "By Claudia Acosta" : "Por Claudia Acosta"}</p><p>${esc(p.meta.description || "")}</p></li>`).join("\n")}\n</ul>` : `<p data-i18n="blog.empty">Aún no hay artículos.</p>`}
 ` + foot);
