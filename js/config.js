@@ -10,7 +10,7 @@ window.TV = {
 
   // Correo de contacto del sitio: mientras sea false, `node scripts/check.mjs --publicar` falla si la dirección aparece en el sitio o en un PDF publicado.
   // Ponlo en true solo cuando el buzón esté activo y quieras publicar la dirección.
-  correoActivo: false,
+  correoActivo: true,
 
   CF_ANALYTICS_TOKEN: "",    // PENDIENTE: token de Cloudflare Web Analytics
   SAMPLE_PDF: "/muestra.pdf" // PENDIENTE: subir muestra.pdf a la raíz
