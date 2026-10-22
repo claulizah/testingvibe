@@ -16,7 +16,7 @@
     "hero.cta2": "Book 30 minutes",
     "hero.pointsLabel": "What's included",
     "hero.p1": "Sign-up, login and payment tested end to end",
-    "hero.p2": "Exposed keys and Supabase RLS rules reviewed",
+    "hero.p2": "Basic security reviewed: headers, exposed keys and data access",
     "hero.p3": "Findings by severity, with prompts to fix them",
 
     "problem.h2": "Building fast with AI doesn't mean building safe",
@@ -54,7 +54,7 @@
     "pricing.ex.badge": "Start here", "pricing.ex.name": "Express Review",
     "pricing.ex.unit": "USD · ≈ $1,250 MXN · 48 h",
     "pricing.ex.l1": "Critical flows: sign-up, login and payment",
-    "pricing.ex.l2": "Exposed keys and Supabase RLS review",
+    "pricing.ex.l2": "Basic security: headers, exposed keys and data access (RLS if you use Supabase)",
     "pricing.ex.l3": "Basic accessibility",
     "pricing.ex.l4": "Findings prioritized by severity",
     "pricing.ex.l5": "1-hour action plan: what to fix first",
