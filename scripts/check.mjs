@@ -1,5 +1,6 @@
 // Verifica que cada data-i18n / data-i18n-attr tenga traducción EN y que no sobren claves; revisa enlaces internos, anclas, marcadores pendientes y botones de pago.
 //   node scripts/check.mjs             revisión normal (los enlaces de Stripe de prueba solo avisan)
+//                                      (siempre) falla si queda un marcador sin completar VISIBLE ([PENDIENTE, [PENDING, [COMPLETAR, TODO, XXX) en cualquier página o en el texto EN de una clave visible; lo comentado no cuenta
 //   node scripts/check.mjs --publicar  modo estricto, antes de publicar: falla con enlaces de prueba, con cualquier «[COMPLETAR» en páginas y scripts,
 //                                      y si el correo de contacto aparece en el sitio o en un PDF publicado mientras `correoActivo` (js/config.js) no sea true.
 //                                      «Publicado» = todo lo que está en el repo fuera de carpetas que empiezan con «_»; un PDF de muestra solo local (fuera del repo o en una carpeta «_») no cuenta.
@@ -30,6 +31,23 @@ const index = indexCrudo.replace(/<!--[\s\S]*?-->/g, "");
 const ids = new Set([...index.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
 for (const m of index.matchAll(/href="#([^"]+)"/g)) if (!ids.has(m[1])) { console.log("ANCLA MUERTA index.html #" + m[1]); bad++; }
 if (indexCrudo.includes("[COMPLETAR")) { console.log("MARCADOR [COMPLETAR en index.html (ni siquiera comentado)"); bad++; }
+
+// --- Marcadores sin completar VISIBLES, en cualquier idioma (siempre, no solo con --publicar). Lo comentado (secciones retiradas) no cuenta. ---
+// Páginas: cualquier marcador fuera de comentarios y de <script>/<style>. Inglés: el texto EN de cada clave data-i18n que usa una página a la vista.
+const MARCADOR = /\[(?:PENDIENTE|PENDING|COMPLETAR)\b|\bTODO\b|\bXXX\b/;
+const valoresEn = new Map([...i18n.matchAll(/"([\w.]+)"\s*:\s*"((?:[^"\\]|\\.)*)"/g)].map((m) => [m[1], m[2]]));
+const clavesVisibles = new Map();
+for (const f of htmls) {
+  const visible = readFileSync(f, "utf8").replace(/<!--[\s\S]*?-->/g, "");
+  for (const m of visible.matchAll(/data-i18n="([^"]+)"/g)) clavesVisibles.set(m[1], f);
+  for (const m of visible.matchAll(/data-i18n-attr="([^"]+)"/g)) m[1].split(",").forEach((p) => clavesVisibles.set(p.split(":")[1].trim(), f));
+  const m = MARCADOR.exec(visible.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ""));
+  if (m) { console.log(`MARCADOR VISIBLE «${m[0]}» en ${relative(root, f)} (línea ${visible.slice(0, visible.indexOf(m[0])).split("\n").length}): coméntalo como el Checklist hasta que exista el texto`); bad++; }
+}
+for (const [clave, archivo] of clavesVisibles) {
+  const en = valoresEn.get(clave);
+  if (en && MARCADOR.test(en)) { console.log(`MARCADOR VISIBLE (EN) en la clave «${clave}» de js/i18n.js, usada por ${relative(root, archivo)}: «${en.slice(0, 60)}»`); bad++; }
+}
 for (const m of index.matchAll(/<a\b[^>]*data-pay="([^"]+)"[^>]*>/g)) {
   const href = /href="([^"]*)"/.exec(m[0])?.[1] || "";
   if (!href || href.startsWith("#")) { console.log("BOTÓN DE PAGO sin enlace propio:", m[1], href || "(sin href)"); bad++; }
