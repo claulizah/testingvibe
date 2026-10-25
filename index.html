@@ -145,7 +145,8 @@
 <section id="paquetes" class="section alt">
   <div class="wrap">
     <h2 data-i18n="pricing.h2">Paquetes</h2>
-    <p class="sub" data-i18n="pricing.sub">Precios en dólares (USD); el equivalente en pesos es aproximado (≈18.16 MXN por USD). </p>
+    <p class="sub" data-i18n="pricing.sub">Precios en dólares (USD). Precios en pesos aproximados, referencia 24 de octubre de 2026.</p>
+    <p class="sub" data-i18n="pricing.plazos">Plazos en días hábiles (lunes a viernes). En días festivos puede haber retraso y te avisamos.</p>
     <div class="cards">
 
       <article id="chequeo" class="card">
@@ -155,7 +156,7 @@
         <ul>
           <li data-i18n="pricing.ch.l1">Revisión automática de lo visible desde fuera de tu app: HTTPS, cabeceras de seguridad, errores de consola, enlaces rotos, rendimiento móvil y accesibilidad automática (parcial).</li>
           <li data-i18n="pricing.ch.l2">Reporte de 2 páginas en 24 horas hábiles.</li>
-          <li data-i18n="pricing.ch.l3">No incluye pruebas con sesión iniciada.</li>
+          <li data-i18n="pricing.ch.l3">No incluye: pruebas con sesión iniciada; registro de cuentas, inicio de sesión ni pagos; revisión de la base de datos.</li>
           <li data-i18n="pricing.ch.l4">Cupos limitados cada semana.</li>
           <li data-i18n="pricing.ch.l5">Solo para apps de las que eres dueño o tienes permiso escrito.</li>
         </ul>
@@ -166,10 +167,10 @@
       <article id="flujo" class="card">
         <p class="badge muted" data-i18n="pricing.fl.badge">Un solo flujo</p>
         <h3 data-i18n="pricing.fl.name">Revisión de un flujo</h3>
-        <p class="price"><span>$39</span> <small data-i18n="pricing.fl.unit">USD · ≈ $710 MXN</small></p>
+        <p class="price"><span>$39</span> <small data-i18n="pricing.fl.unit">USD · ≈ $710 MXN · hasta 48 h hábiles</small></p>
         <p class="launch" data-i18n="pricing.launch">Precio de lanzamiento</p>
         <ul>
-          <li data-i18n="pricing.fl.l1">Un flujo crítico (registro, login o pago) probado a fondo en 24 a 48 horas.</li>
+          <li data-i18n="pricing.fl.l1">Un flujo crítico (registro, login o pago) probado a fondo, con plazo de hasta 48 h hábiles.</li>
           <li data-i18n="pricing.fl.l2">PDF corto con hallazgos, evidencia y prompts de arreglo.</li>
           <li data-i18n="pricing.fl.l3">No incluye puntaje completo, llamada ni re-test.</li>
         </ul>
@@ -179,7 +180,7 @@
       <article id="express" class="card featured">
         <p class="badge" data-i18n="pricing.ex.badge">Para empezar</p>
         <h3 data-i18n="pricing.ex.name">Revisión Express</h3>
-        <p class="price"><span>$69</span> <small data-i18n="pricing.ex.unit">USD · ≈ $1,250 MXN · 48 h</small></p>
+        <p class="price"><span>$69</span> <small data-i18n="pricing.ex.unit">USD · ≈ $1,250 MXN · 48 h hábiles</small></p>
         <p class="launch" data-i18n="pricing.launch">Precio de lanzamiento</p>
         <ul>
           <li data-i18n="pricing.ex.l1">Flujos críticos: registro, login y pago</li>
@@ -188,15 +189,16 @@
           <li data-i18n="pricing.ex.l4">Hallazgos priorizados por severidad</li>
           <li data-i18n="pricing.ex.l5">Plan de acción de 1 hora: qué arreglar primero</li>
           <li data-i18n="pricing.ex.l6">Reporte en PDF y en Word</li>
+          <li data-i18n="pricing.ex.l7">No incluye: pruebas funcionales de toda la app; plan de lanzamiento y reversa; paquete de pruebas Playwright; llamada de 30 min; re-test a 7 días hábiles.</li>
         </ul>
-        <p class="guarantee" data-i18n="pricing.ex.guar"><strong>Garantía:</strong> si no encuentro al menos 5 hallazgos útiles, no pagas.</p>
+        <p class="guarantee" data-i18n="pricing.ex.guar"><strong>Garantía:</strong> Entrega en 48 horas hábiles, contadas desde que recibimos tu pago, tu permiso y el acceso necesario (por ejemplo, una cuenta de prueba). Si la revisión no encuentra al menos 5 hallazgos útiles, te devolvemos tu pago. Un hallazgo es útil si trae evidencia (captura o pasos para reproducirlo) y qué hacer para resolverlo.</p>
         <a class="btn btn-primary" href="mailto:contacto@testingvibe.com" data-pay="express" data-i18n="pricing.ex.cta">Pedir Revisión Express — $69</a>
       </article>
 
       <article id="auditoria" class="card">
         <p class="badge muted" data-i18n="pricing.au.badge">Cobertura total</p>
         <h3 data-i18n="pricing.au.name">Auditoría Completa</h3>
-        <p class="price"><span>$320</span> <s>$449</s> <small data-i18n="pricing.au.unit">USD · ≈ $5,810 MXN · hasta 7 días</small></p>
+        <p class="price"><span>$320</span> <s>$449</s> <small data-i18n="pricing.au.unit">USD · ≈ $5,810 MXN · hasta 7 días hábiles</small></p>
         <p class="launch" data-i18n="pricing.au.launch">Precio de lanzamiento para los primeros 3 clientes</p>
         <ul>
           <li data-i18n="pricing.au.l1">Todo lo de la Revisión Express</li>
@@ -204,7 +206,7 @@
           <li data-i18n="pricing.au.l3">Rendimiento y textos ES/EN</li>
           <li data-i18n="pricing.au.l4">Plan de lanzamiento y reversa</li>
           <li data-i18n="pricing.au.l5">Paquete de pruebas Playwright</li>
-          <li data-i18n="pricing.au.l6">Llamada de 30 min y re-test a 7 días</li>
+          <li data-i18n="pricing.au.l6">Llamada de 30 min y re-test a 7 días hábiles</li>
         </ul>
         <a class="btn btn-primary" href="mailto:contacto@testingvibe.com" data-pay="auditoria" data-i18n="pricing.au.cta">Pedir Auditoría — $320</a>
       </article>
