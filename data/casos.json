@@ -29,8 +29,13 @@
     {
       "sitio": "dragonflaiqa.com",
       "paquete": { "es": "Chequeo rápido", "en": "Quick Check" },
-      "estado": "en_revision",
-      "frase": { "es": "El resultado se publicará cuando se atienda un punto pendiente y se repita el Chequeo.", "en": "The result will be published once a pending item is fixed and the Check is run again." }
+      "estado": "revisado",
+      "fecha": "2026-10-27",
+      "fecha_texto": { "es": "27 de octubre de 2026", "en": "October 27, 2026" },
+      "puntaje": 95,
+      "veredicto": { "es": "Sí", "en": "Yes" },
+      "nivel": { "es": "Excelente", "en": "Excellent" },
+      "frase": { "es": "La página tarda unos 3 segundos en mostrarse en celular.", "en": "The page takes about 3 seconds to appear on a phone." }
     }
   ]
 }
