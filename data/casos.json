@@ -1,0 +1,37 @@
+{
+  "nota": "Solo dominios en texto (sin enlaces ni rutas) y frases sobre lo que se ve desde afuera. Los datos salen de un Chequeo rápido real de cada sitio. Antes de publicar: node scripts/check.mjs",
+  "etiquetas": {
+    "es": { "puntaje": "Puntaje", "veredicto": "Veredicto", "nivel": "Nivel", "revision": "En revisión", "fecha": "Datos del" },
+    "en": { "puntaje": "Score", "veredicto": "Verdict", "nivel": "Level", "revision": "Under review", "fecha": "Data from" }
+  },
+  "casos": [
+    {
+      "sitio": "zonaqro.com",
+      "paquete": { "es": "Chequeo rápido", "en": "Quick Check" },
+      "estado": "revisado",
+      "fecha": "2026-10-26",
+      "fecha_texto": { "es": "26 de octubre de 2026", "en": "October 26, 2026" },
+      "puntaje": 92,
+      "veredicto": { "es": "Sí", "en": "Yes" },
+      "nivel": { "es": "Excelente", "en": "Excellent" },
+      "frase": { "es": "Lo principal tardaba unos 3 segundos en aparecer en celular.", "en": "The main content took about 3 seconds to appear on a phone." }
+    },
+    {
+      "sitio": "dragonflaievents.com",
+      "paquete": { "es": "Chequeo rápido", "en": "Quick Check" },
+      "estado": "revisado",
+      "fecha": "2026-10-08",
+      "fecha_texto": { "es": "8 de octubre de 2026", "en": "October 8, 2026" },
+      "puntaje": 65,
+      "veredicto": null,
+      "nivel": { "es": "Necesita atención", "en": "Needs attention" },
+      "frase": { "es": "Lo principal tardaba unos 11 segundos en aparecer en celular.", "en": "The main content took about 11 seconds to appear on a phone." }
+    },
+    {
+      "sitio": "dragonflaiqa.com",
+      "paquete": { "es": "Chequeo rápido", "en": "Quick Check" },
+      "estado": "en_revision",
+      "frase": { "es": "El resultado se publicará cuando se atienda un punto pendiente y se repita el Chequeo.", "en": "The result will be published once a pending item is fixed and the Check is run again." }
+    }
+  ]
+}

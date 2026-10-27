@@ -63,6 +63,7 @@
       <a href="#paquetes" data-i18n="nav.pricing">Paquetes</a>
       <a href="#asesoria" data-i18n="nav.advice">Asesoría</a>
       <a href="#recibes" data-i18n="nav.receive">Qué recibes</a>
+      <a href="#casos" data-i18n="nav.cases">Casos</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <!-- BLOG: fuera de la publicación (ver _borradores/). Para volver: publicar artículos reales y restaurar este enlace.
       <a href="/blog/" class="flag flag-blog" data-i18n="nav.blog">Blog</a>
@@ -327,6 +328,18 @@
   </div>
 </section>
 
+<!-- 5b. CASOS PROBADOS (datos en data/casos.json) -->
+<section id="casos" class="section alt">
+  <div class="wrap">
+    <h2 data-i18n="cases.h2">Casos probados</h2>
+    <p class="sub" data-i18n="cases.sub">Sitios revisados con la herramienta, con el resultado en una frase.</p>
+    <div id="casos-lista" class="casos"></div>
+    <noscript><p class="note" data-i18n="cases.nojs">Activa JavaScript para ver los casos.</p></noscript>
+    <p class="note" data-i18n="cases.own">Sitios propios de la autora, probados con permiso de la dueña.</p>
+    <p class="note" data-i18n="cases.scope">El Chequeo revisa lo que se ve desde afuera; los flujos se prueban a mano en Express.</p>
+  </div>
+</section>
+
 <!-- TESTIMONIOS: OCULTOS hasta tener testimonios reales (con permiso de quien los da). Para activarlos: poner los textos reales,
      quitar este comentario y poner SHOW_TESTIMONIALS en true (js/config.js).
 <section id="testimonios" class="section flag flag-testimonials">
@@ -404,5 +417,6 @@
 
 <script src="/js/i18n.js" defer></script>
 <script src="/js/main.js" defer></script>
+<script src="/js/casos.js" defer></script>
 </body>
 </html>

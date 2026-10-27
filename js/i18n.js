@@ -5,7 +5,7 @@
     "meta.desc": "Testing and quality assurance for modern software, with banking-grade rigor. QA review for apps, websites and platforms, with or without AI.",
     "meta.ogdesc": "Testing and quality assurance for modern software, with banking-grade rigor. Launch with confidence.",
     "a11y.skip": "Skip to content",
-    "nav.label": "Main", "nav.problem": "The problem", "nav.how": "How it works", "nav.pricing": "Packages", "nav.receive": "What you get", "nav.faq": "FAQ", "nav.blog": "Blog", "nav.advice": "Advisory",
+    "nav.label": "Main", "nav.problem": "The problem", "nav.how": "How it works", "nav.pricing": "Packages", "nav.receive": "What you get", "nav.cases": "Cases", "nav.faq": "FAQ", "nav.blog": "Blog", "nav.advice": "Advisory",
     "lang.label": "Language",
 
     "hero.eyebrow": "For apps, websites and platforms, built with or without AI",
@@ -86,6 +86,12 @@
     "pricing.sample": "Download sample report (PDF)",
 
     "testi.h2": "What people who already launched say",
+
+    "cases.h2": "Tested cases",
+    "cases.sub": "Sites reviewed with the tool, with the result in one sentence.",
+    "cases.nojs": "Turn on JavaScript to see the cases.",
+    "cases.own": "The author's own sites, tested with the owner's permission.",
+    "cases.scope": "The Check reviews what can be seen from the outside; flows are tested by hand in Express.",
 
     "rec.h2": "What you get",
     "rec.sub": "A report designed to help you decide and act, not to impress.",

@@ -62,6 +62,20 @@ h2{font-size:clamp(1.55rem,4.4vw,2.2rem);line-height:1.2;margin:0 0 10px;letter-
 h3{margin:0 0 6px;font-size:1.2rem}
 .sub{color:var(--muted);margin:0 0 30px;max-width:62ch}
 .note{color:var(--muted);font-size:.95rem;margin-top:26px;max-width:70ch}
+.casos{display:grid;gap:18px}
+.casos+.note,.casos~.note{margin-top:14px}
+.caso{background:var(--surface);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.caso-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px;margin-bottom:12px}
+.caso-sitio{margin:0;font-size:1.1rem;overflow-wrap:anywhere}
+.caso-paquete{font-size:.85rem;font-weight:600;color:var(--muted)}
+.caso-datos{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 12px}
+.caso-datos div{display:flex;flex-direction:column}
+.caso-datos dt{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.caso-datos dd{margin:0;font-size:1.15rem;font-weight:700}
+.caso-estado{display:inline-block;margin:0 0 12px;background:var(--bg-alt);border-radius:999px;padding:4px 14px;font-size:.92rem;font-weight:700}
+.caso-frase{margin:0 0 8px}
+.caso-fecha{margin:0;font-size:.85rem;color:var(--muted)}
+@media(min-width:820px){.casos{grid-template-columns:repeat(3,1fr)}}
 
 .stats{display:grid;gap:18px}
 .stat{margin:0;background:var(--surface);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}

@@ -90,6 +90,20 @@ if (conCorreo.length && !correoActivo) {
   if (publicar) bad++;
 } else if (conCorreo.length) console.log("(info) correoActivo es true: el correo de contacto se publica en", conCorreo.length, "archivo(s).");
 
+// --- data/casos.json: solo dominios en texto; sin enlaces, rutas ni direcciones que ayuden a atacar un sitio ---
+if (existsSync(join(root, "data/casos.json"))) {
+  const casosTxt = readFileSync(join(root, "data/casos.json"), "utf8");
+  const casos = JSON.parse(casosTxt);
+  const textos = []; (function rec(x) { if (typeof x === "string") textos.push(x); else if (x && typeof x === "object") Object.values(x).forEach(rec); })(casos.casos);
+  for (const t of textos) if (/https?:|www\.|\/[a-z0-9_-]+|:\d{2,5}\b|\b\d{1,3}(\.\d{1,3}){3}\b|\?[a-z]+=/i.test(t)) { console.log("CASOS: texto con ruta, enlace o dirección en data/casos.json:", t.slice(0, 60)); bad++; }
+  for (const c of casos.casos) {
+    if (!/^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(c.sitio)) { console.log("CASOS: «sitio» debe ser solo un dominio:", c.sitio); bad++; }
+    for (const k of ["frase", "paquete"]) if (!c[k] || !c[k].es || !c[k].en) { console.log("CASOS: falta es/en en", c.sitio, k); bad++; }
+    if (c.estado === "revisado" && !(Number.isInteger(c.puntaje) && c.puntaje >= 0 && c.puntaje <= 100)) { console.log("CASOS: puntaje inválido en", c.sitio); bad++; }
+    if (c.estado === "en_revision" && (c.puntaje !== undefined || c.veredicto !== undefined)) { console.log("CASOS: un caso «en revisión» no debe llevar puntaje ni veredicto:", c.sitio); bad++; }
+  }
+}
+
 const extra = ["blog.title","blog.by","terms.title"]; // usadas solo por JS/builders
 for (const k of used) if (!dict.has(k)) { console.log("FALTA EN:", k); bad++; }
 for (const k of dict) if (!used.has(k) && !k.startsWith("intake.ok") && !k.startsWith("intake.err") && !k.startsWith("intake.pending") && !k.startsWith("intake.invalid") && !extra.includes(k)) console.log("(sin usar)", k);
