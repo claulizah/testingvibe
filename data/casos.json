@@ -23,8 +23,7 @@
       "fecha": "2026-10-08",
       "fecha_texto": { "es": "8 de octubre de 2026", "en": "October 8, 2026" },
       "puntaje": 65,
-      "veredicto": null,
-      "nivel": { "es": "Necesita atención", "en": "Needs attention" },
+      "veredicto": { "es": "Necesita atención", "en": "Needs attention" },
       "frase": { "es": "Lo principal tardaba unos 11 segundos en aparecer en celular.", "en": "The main content took about 11 seconds to appear on a phone." }
     },
     {
